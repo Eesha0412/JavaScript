@@ -27,7 +27,14 @@ The notes are arranged in a **3-rows-per-column grid layout** that expands horiz
 ├── script_NA.js # JavaScript logic
 └── notes_app_images/ # Icons & assets (notes, edit, delete)
 
+---
+
 ## 🛠️ How to Run
 1. Clone or download the repository.
 2. Open index.html in any modern browser.
 3. Start creating notes!
+
+---
+
+## 🎥 Demo
+![Notes App Demo](Notes%20APP/notes_app_images/Notes%20APP%20GIF.gif)
