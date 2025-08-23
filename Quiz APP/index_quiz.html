@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz APP</title>
+    <link rel="stylesheet" href="style_quiz.css">
+</head>
+
+<body>
+    <h1 id="quiz-app-heading">Quiz Application</h1>
+    <div class="app">
+        
+
+        <!-- Home Screen  -->
+
+        <section id="home">
+            <h2> Select a quiz to play</h2>
+            <div class="cards-container"></div>
+            <!-- <div id="quiz-list" class="quiz-grid">
+                <-- Cards for quizzes will be injected here -->
+            <!-- </div> --> 
+        </section>
+
+        <!-- Play Screen -->
+        <section id="play" hidden>
+            <h2 id="quiz-title">Quiz Title</h2>
+            <div class="quiz">
+                <h2 id="question">Question comes here</h2>
+                <div id="options"></div>
+                <div class="controls">
+                    <button id="next-btn">Next Question</button>
+                    <button id="home-btn" class="outline">Back to Home</button>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <script src="script_quiz.js"></script>
+</body>
+
+</html>
