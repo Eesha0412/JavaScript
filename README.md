@@ -64,7 +64,14 @@ Users can choose a quiz category, answer multiple-choice questions, and get thei
 ├── style_quiz.css # App styling
 ├── script_quiz.js # JavaScript logic
 
+---
+
 ## 🛠️ How to Run
 1. Clone or download the repository.
 2. Open index_quiz.html in any modern browser.
 3. Start solving quizzes!
+
+---
+
+## 🎥 Demo
+![Quiz App Demo](Quiz%20APP/QuizAPPDemo.gif)
