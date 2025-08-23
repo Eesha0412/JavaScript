@@ -217,11 +217,13 @@ function startQuiz(quizIndex) {
     next.innerHTML = "Next Question";
     home.hidden = true;
     play.hidden = false;
+    console.log("2: ", currentQuesIndex, currentQuizIndex)
     showQuestion();
 }
 
 function showQuestion() {
     resetState();
+    console.log("3: ", currentQuesIndex, currentQuizIndex)
     let currQuestion = quizzes[currentQuizIndex].questions[currentQuesIndex];
     let quesNo = currentQuesIndex + 1;
     questionElement.innerHTML = quesNo + ". " + currQuestion.question;
@@ -274,22 +276,21 @@ function selectOption(e) {
 
 }
 
+let quizEnded = false;
+
 function showScore(currentQuizIndex) {
     resetState();
     questionElement.innerHTML = `You scored ${score} out of ${quizzes[currentQuizIndex].questions.length}!`;
     next.innerHTML = "Play Again!";
     next.style.display = "block";
     console.log('current quiz index: ', currentQuizIndex);
-    // clear any old event handler
-    next.onclick = null;
-
-    // now assign fresh handler
-    next.onclick = () => startQuiz(currentQuizIndex);
+    quizEnded=true;
 }
 
 function handleNextButton() {
     currentQuesIndex++;
     if (currentQuesIndex < quizzes[currentQuizIndex].questions.length) {
+        console.log("1: ", currentQuesIndex, currentQuizIndex)
         showQuestion();
     }
     else {
@@ -297,14 +298,23 @@ function handleNextButton() {
     }
 }
 
+// next.addEventListener("click", () => {
+//     if (currentQuesIndex < quizzes[currentQuizIndex].questions.length) {
+//         handleNextButton();
+//     }
+//     else {
+//         showHomePage();
+//     }
+// })
+
 next.addEventListener("click", () => {
-    if (currentQuesIndex < quizzes[currentQuizIndex].questions.length) {
+    if (quizEnded) {
+        quizEnded = false; // reset
+        startQuiz(currentQuizIndex);
+    } else if (currentQuesIndex < quizzes[currentQuizIndex].questions.length) {
         handleNextButton();
     }
-    else {
-        showHomePage();
-    }
-})
+});
 
 homeBtn.addEventListener("click", showHomePage);
 
